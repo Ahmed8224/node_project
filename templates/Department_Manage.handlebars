@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Management</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: rgb(243, 236, 236);">
+    <div style="padding: 50px 200px; ">
+      <h2>Create A New Department:</h2>
+    <form action="/departments" method="post">
+    <div class="form-group">
+  <label for="usr" style="padding: 30px 0px;">Department Name:</label>
+  <input type="text" name="name" class="form-control" id="usr">
+</div>
+<div class="form-group">
+  <label for="usr" style="padding: 30px 0px;">Department Code:</label>
+  <input type="text" name="code" class="form-control" id="usr">
+</div>
+<button type="submit"  style="margin: 20px 100px 20px 0px; background-color:rgb(0, 0, 0); color:beige; padding:10px 20px;" >Add</button>
+</form>
+</div>
+</body>
+</html>
