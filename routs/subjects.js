@@ -9,7 +9,7 @@ router.post('/',store)
 
 router.get('/update_subject',async(req,res)=>{
     const update=await subject.find().lean()
-    res.render('update_subject',{update});
+    res.render('update_subject',{update})
 })
 
 router.get('/:id/edit', edit);

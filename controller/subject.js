@@ -3,8 +3,20 @@ import subject from "../models/subject.js"
 
 
 
-export const index =(req,res)=>{
-    res.render('subject/all')
+export const index =async(req,res)=>{
+     
+//    const {token}=console.log(req.cookies);
+//    try{
+// var decoded=jwt.verify(token,process.env.JWT_SECRET);
+//    }catch (error){
+// return res.send('incorrect token');
+
+//    }
+// console.log(decoded);
+   const subjects=await subject.find({doctor: req.user._id},{name:1}).lean();
+   
+    
+    res.render('all',{subjects});
 }
 
 
@@ -22,7 +34,8 @@ export const store =  async(req, res)=> {
       name,
       code,
       department,
-      prerequistie
+      prerequistie,
+      doctor: req.user._id,
 
     })
      
@@ -40,7 +53,7 @@ export const edit = async(req,res)=>{
 
 export const update_subjcte =async(req, res)=> {
     const {name, code, department,prerequistie}= req.body;
-     const {i_d}= req.params
+     const {_id}= req.params
 
      await subject.findByIdAndUpdate(_id, {$set: {name, code, department, prerequistie},});
        

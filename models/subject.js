@@ -11,12 +11,18 @@ const subject = new Schema({
     },
     
      departmet:{
-        type: String,
+        type: Schema.Types.ObjectId,
         required: false,
+        ref: 'department'
     },
     prerequistie:{
         type:String,
         required:false,
+    },
+    doctor:{
+        type: Schema.Types.ObjectId,
+        required: false,
+        ref: 'user'
     }
 
 }, 
