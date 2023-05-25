@@ -1,0 +1,374 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0px;
+}
+:root{
+    --blue-color:#0075ff;
+    --dark-blue: #0059ff;
+    --orange-color:#f59e0b;
+    --green-color: #22c55e;
+    --bg-color: #eff3f7;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.table-responsive{
+    max-height: 450px;
+    overflow-y: scroll !important;
+    margin: auto;
+    margin-top: 20px;
+    width: 75%;
+   
+}
+.table{
+    border: 1px solid #000;
+    max-width: 100% !important ;
+    margin: auto !important;
+    overflow: auto;
+}
+.table thead{
+    background-color: #333;
+    color: #fdfdfd;
+}
+.table td,.table th{
+    border: 1px solid #000;
+}
+:focus{
+    outline: none;
+}
+.hiddenn{
+    display: none;
+}
+/* Full page */
+.page{
+    min-height: 100vh;
+    display: flex;
+}
+/* ****** start sidebar ******* */
+.sidebar{
+    box-shadow: 2px 0px 5px 3px #eee;
+    padding: 10px;
+    
+}
+/* logo */
+.sidebar h2{
+    width: fit-content;
+    margin: 10px auto 30px;
+    position: relative;
+} 
+.sidebar h2::before{
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    left: 5%;
+    bottom: -10px;
+    background-color: #000;
+}
+.sidebar h2::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    border-radius: 50%;
+}
+/* links */
+.sidebar ul li{
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: 0.5s;
+    border-radius: 7px;
+    border-bottom: 1px solid #ddd;
+}
+.sidebar ul li:hover,.activee{
+    background-color: #eee;
+    border-radius: 20px;
+}
+.sidebar ul li a{
+    color: #000;
+    display: block;
+   
+}
+.sidebar ul li a span{
+    margin-left: 10px;
+}
+
+/* responsive sidebar for mobile */
+@media screen and (max-width:767px){
+    .sidebar{
+        text-align: center;
+    }
+    .sidebar h2{
+        font-size: 17px;
+        width: 60px;
+    }
+   
+    .sidebar ul li a span{
+        display: none;
+    }
+}
+/* ******* End Sidebar ******* */
+
+/* ********  Content  ********* */
+.content{
+    flex: 1;
+    padding: 10px;
+    background-color: var(--bg-color);
+}
+/* start header */
+.content .header{
+    background-color: white;
+    box-shadow: 0px 2px 5px 3px #eee;
+    margin: -7px;
+    padding: 15px;
+    padding-left: 35px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+.content .header span{
+    margin-right: 5px;
+}
+.content .header i{
+    cursor: pointer;
+}
+/* logout dropdown */
+.content .header .logout{
+    position: absolute;
+    bottom:-85px ;
+    background-color: rgba(255, 255, 255, 0.315);
+    padding: 5px;
+    display: none;
+    transition: 0.5s;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+.content .header .logout li{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: 0.5s;
+}
+.content .header .logout li:first-of-type{
+    font-weight: 700;
+}
+.content .header .logout li:hover{
+    background-color: #eee;
+}
+.content .header .logout li a{
+    display: block;
+    color: #000;
+}
+/* End Header */
+/* main heading */
+.content .main-heading{
+    position: relative;
+
+}
+.content .main-heading::before{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 5px;
+    background-color: #fff;
+    left: 5px;
+    bottom: -20px;
+    }
+.content .main-heading::after{
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 5px;
+    background-color: #000;
+    left: 5px;
+    bottom: -20px;
+}
+
+.content .dash-content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5% 40px;
+    margin-top: 50px;
+    padding: 20px;
+}
+.content .dash-content .box{
+    flex: 45%;
+    background-color: #fff;
+    min-height: 400px;
+    margin-bottom: 40px;
+    padding: 15px;
+}
+@media screen and (max-width:767px){
+    .content .dash-content{
+        padding: 5px;
+    }
+    .content .dash-content .box{
+        flex:100%;
+    }
+}
+
+
+/* doctor manage */
+
+.content .add-button{
+   position: relative;
+   margin-top: 10px;
+   
+
+}
+.content .add-button button{
+    background-color: #333;
+    outline: none;
+    position: absolute;
+    right: 13%;
+}
+
+
+
+/* student info */
+
+.content .student-info{
+    display: flex;
+    margin: 50px auto;
+    gap: 20px;
+    border: 1px solid #333;
+    max-width: 450px;
+    padding: 10px;
+    background-color: white;
+    outline: 1px solid #333;
+    outline-offset: 5px;
+
+}
+.content .student-info .student-pic{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    
+
+}
+.content .student-info .student-pic img{
+  width: 100%;
+  height: 100%;
+}
+
+.content .student-info .student-pic input{
+    display: none;
+}
+.content .student-info .student-pic #uploadBtn{
+    position: absolute;
+    width: 100%;
+    padding: 5px;
+    bottom: 2px;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.315);
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    height: 34px;
+    opacity: 0;
+}
+.content .student-info .student-pic:hover #uploadBtn{
+   opacity: 1;
+} 
+.content .student-info .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 20px;
+    font-weight: 600;
+}
+.content .student-info .info > div{
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+
+@media screen and (max-width:767px){
+    .content .student-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.7;
+    }
+}
+
+#courseTable{
+    border-collapse: collapse;
+    
+}
+#registerForm select{
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+#registerForm select option{
+    background-color: #eee;
+    padding: 2px;
+}
+
+.files-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    margin-top: 50px;
+}
+.files-container .file-box{
+    flex: calc(88% / 6);
+    height: 165px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    color: #777;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.files-container .file-box button{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+.files-container .file-box button:hover{
+    color: #000;
+}
+@media screen and(max-width:767px){
+    .files-container .file-box{
+        flex: calc(88% / 3);
+    }
+
+}
+@media screen and(min-width:768px) and(max-width:991px){
+    .files-container .file-box{
+        flex: calc(88% / 4);
+    }
+
+}
+
+
+
